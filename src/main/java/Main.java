@@ -12,7 +12,7 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
-        new DBInitService().initDB();
+        /*new DBInitService().initDB();
         HibernateUtil hibernateUtil = HibernateUtil.getInstance();
 
         //ClientCRUDService
@@ -82,10 +82,13 @@ public class Main {
         System.out.println("Delete planet id: " + "SUN");
 
         //getAll
-        System.out.println("All Planets: " + planetCrudService.getAll());
+        System.out.println("All Planets: " + planetCrudService.getAll());*/
 
 
         //TicketCrudService
+        new DBInitService().initDB();
+        HibernateUtil hibernateUtil = HibernateUtil.getInstance();
+        PlanetCrudService planetCrudService = new PlanetCrudService(hibernateUtil);
         System.out.println("\n---TicketCrudService---\n");
         TicketCrudService ticketCrudService = new TicketCrudService(hibernateUtil);
 
